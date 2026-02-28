@@ -137,6 +137,6 @@ python 02_exploratory_data_analysis.py
 
 ---
 
-Developed by **Smriti Yadav** as a **Major Research Project** under **Dr. Shalini Puri(Manipal University Jaipur).**
+Developed by **Smriti Yadav** as a **Major Research Project** under the guidance of  **Dr. Shalini Puri(Manipal University Jaipur).**
 
 
