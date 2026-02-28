@@ -1,0 +1,17 @@
+====================================================
+   WILDLIFE CONSERVATION AI: RESEARCH METRICS
+====================================================
+
+1. TEMPORAL FORECASTING ACCURACY (Prophet)
+----------------------------------------------------
+RMSE (Root Mean Squared Error): 270.18 observations
+MAE (Mean Absolute Error):      139.83 observations
+MAPE (Mean Absolute % Error):   107.00%
+*Note: Evaluated on an 80/20 chronological split.
+
+2. SPATIAL CLUSTERING COHESION (HDBSCAN)
+----------------------------------------------------
+Total Stopover Zones Identified: 4
+Silhouette Score (-1 to 1):      0.7246
+Noise Ratio (In-Flight points):  32.37%
+*Note: Silhouette score calculated using Haversine distance.

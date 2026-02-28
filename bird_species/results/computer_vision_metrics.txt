@@ -1,0 +1,15 @@
+====================================================
+   BIRD SPECIES CLASSIFICATION: TEST SET METRICS
+====================================================
+
+Total Test Images: 2625
+Overall Accuracy:  97.41%
+Macro F1-Score:    0.9733
+
+TOP 5 MISCLASSIFICATIONS:
+----------------------------------------------------
+The model confused 'GILDED FLICKER' with 'NORTHERN FLICKER' (2 times)
+The model confused 'VEERY' with 'OVENBIRD' (2 times)
+The model confused 'NORTHERN CARDINAL' with 'PYRRHULOXIA' (2 times)
+The model confused 'ABBOTTS BOOBY' with 'MASKED BOOBY' (1 times)
+The model confused 'AMERICAN DIPPER' with 'BREWERS BLACKBIRD' (1 times)
