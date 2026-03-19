@@ -10,17 +10,17 @@ This repository contains a comprehensive, end-to-end Machine Learning pipeline d
 
 The system is divided into two highly optimized modules:
 1. **Spatiotemporal Migration Tracking:** Predicting *when* and *where* migratory waterfowl will travel.
-2. **Bird Species Classification:** A 525-class Transfer Learning pipeline with visual explainability.
+2. **Bird Species Classification:** A 525-class Transfer Learning pipeline with rigorous statistical validation and visual explainability.
 
 ---
 
 ## 🧠 The Core Philosophy: Why Explainable AI (XAI)?
 In ecological research and public policy, **"black-box" models are fundamentally unacceptable.** Policymakers will not designate a wetland as a protected environmental zone simply because a neural network output a hidden probability. 
 
-This project integrates **Explainable AI (XAI)** at every layer to prove the model's reasoning to human experts:
-* **Grad-CAM (Computer Vision):** Proves the Convolutional Neural Network (CNN) is identifying birds via genuine avian taxonomy (e.g., beak shape, eye rings, plumage) rather than "cheating" by looking at background artifacts like water or trees.
-* **SHAP Values (Temporal Forecasting):** Breaks down complex XGBoost predictions to show ecologists exactly which temporal features (e.g., rolling population means, seasonal lags) are driving a sudden spike in migration volume.
-* **Prophet Components:** Decomposes raw time-series forecasts into isolated yearly and weekly seasonal trends.
+This project integrates high-tier **Explainable AI (XAI)** at every layer to prove the model's reasoning to human experts:
+* **Success vs. Failure Grad-CAM (Computer Vision):** Proves the Convolutional Neural Network (CNN) identifies birds via genuine avian taxonomy (e.g., beak shape, eye rings). Includes explicit failure analysis to document known vulnerabilities like spatial occlusion and background camouflage.
+* **Game-Theoretic SHAP Values (Temporal Forecasting):** Deploys Shapley Additive exPlanations (Summary and Dependence plots) to break down complex XGBoost predictions, showing ecologists exactly how temporal features (e.g., rolling population means) drive migration spikes.
+* **Algorithmic Transparency:** All data pipelines are documented via generated CSV master tables, detailing feature engineering lexicons and dataset balancing statistics.
 
 ---
 
@@ -29,31 +29,34 @@ This module reconstructs the flight paths and schedules of migratory waterfowl u
 
 ### Methodologies & Optimizations
 * **Data Engineering:** Extracted kinematic and temporal features, handling unstructured observation volumes and establishing strict continuous weekly intervals.
-* **Temporal Forecasting (XGBoost vs Prophet):** * Replaced baseline Prophet forecasting with an optimized **XGBoost Regressor** utilizing a **Tweedie Objective Function** (variance power 1.5), perfectly mathematically suited for modeling zero-inflated ecological count data.
-  * *Optimization:* Engineered 1-week, 2-week, and 3-week time-lag features alongside 4-week rolling means to smooth human-observation noise.
-* **Geospatial Stopover Clustering (HDBSCAN):** * Grouped thousands of scattered GPS coordinates into distinct "Stopover Habitats" using the **Haversine metric** to account for the Earth's curvature.
-* **Trajectory Reconstruction (Kalman Filter):** * Applied state-estimation physics to smooth chaotic, human-logged daily coordinates into a continuous, overarching flight trajectory.
+* **Temporal Forecasting (XGBoost vs Prophet):**
+  * Replaced baseline Prophet forecasting with an optimized **XGBoost Regressor** utilizing a **Tweedie Objective Function** (variance power 1.1), perfectly mathematically suited for modeling zero-inflated ecological count data.
+  * *Optimization:* Engineered 1-week and 2-week time-lag features alongside 4-week rolling means to smooth human-observation noise.
+* **Geospatial Stopover Clustering (HDBSCAN):** Grouped thousands of scattered GPS coordinates into distinct "Stopover Habitats" using density-based clustering to filter in-flight "noise," replacing rigid centroid-based K-Means.
+* **Forecast Confidence Intervals:** Generated 95% confidence bands (± 1.96 standard deviations) around time-series predictions to mathematically quantify model uncertainty.
 
 ### 🏆 Module 1 Results
 * **Forecasting Error:** Achieved a highly accurate **37% MAPE** (Mean Absolute Percentage Error) using XGBoost, drastically outperforming the baseline Prophet model (107% MAPE).
 * **Spatial Cohesion:** Achieved a strong **0.72 Silhouette Score** for stopover zone identification.
+* **SHAP Verification:** SHAP dependency analysis successfully verified that short-term lags and rolling population momentum are the definitive mathematical drivers of migration spikes.
 
 ---
 
 ## 🦚 Module 2: Bird Species Classification
-A deep learning computer vision pipeline capable of identifying 525 distinct bird species with extreme accuracy, built on a custom-balanced dataset.
+A deep learning computer vision pipeline capable of identifying 525 distinct bird species with extreme accuracy, mathematically immune to class-imbalance bias.
 
 ### Methodologies & Optimizations
 * **Mathematical Data Auditing:** Built an automated script to calculate the dataset's 25th percentile, mathematically defining the strict threshold for "Rare" vs "Common" species.
-* **Targeted Synthetic Augmentation:** * Addressed severe class imbalance by applying heavy `albumentations` (horizontal flips, 25-degree rotations, color jitter, and blur) **exclusively** to the 144 minority classes. 
-  * Synthesized ~20,000 new images to perfectly balance the dataset without injecting unnecessary noise into majority classes.
-* **Transfer Learning (ResNet-50):** * Leveraged ImageNet pre-trained weights, freezing early convolutional layers (edge detection) and fine-tuning the final `layer4` block for specific ornithological features.
-* **High-Throughput Data Streaming:** Utilized PyTorch `DataLoader` with parallel worker threads and standardized `[0.485, 0.456, 0.406]` normalization for optimal GPU saturation.
+* **Targeted Synthetic Augmentation:** * Addressed severe class imbalance by applying heavy `albumentations` exclusively to the 144 minority classes, bringing the imbalance ratio to a near-perfect 1:1.1 equilibrium.
+* **Transfer Learning (ResNet-50):** Leveraged ImageNet pre-trained weights, freezing early convolutional layers and fine-tuning the final `layer4` block for specific ornithological features.
+* **5-Fold Bootstrapped Cross-Validation:** Proved architectural stability and immunized the model against dataset-split luck by evaluating across 5 randomized test subsets.
 
 ### 🏆 Module 2 Results
 * **Overall Test Accuracy:** **97.41%** (Evaluated on a strictly unseen test holdout set).
 * **Macro F1-Score:** **0.9733** (Proving the targeted augmentation successfully eliminated minority-class bias).
-* **Overfitting Control:** Model training was dynamically halted and weights saved at the exact convergence point (Epoch 8) before validation loss degraded.
+* **Model Stability:** 5-Fold Cross-Validation yielded a remarkably tight variance of **±0.25% standard deviation**, mathematically proving consistent generalizability.
+* **Morphological Twins Analysis:** Analyzed 20 pairs of highly similar congeneric species (e.g., *Downy vs. Hairy Woodpecker*). The augmentation pipeline reduced the top 5 worst misclassification error rates from ~90% down to ~15%.
+* **Statistical Significance:** Conducted McNemar's Test on ablation studies to statistically quantify the classifier improvements over raw baseline weights.
 
 ---
 
@@ -61,13 +64,13 @@ A deep learning computer vision pipeline capable of identifying 525 distinct bir
 * **Deep Learning & Vision:** `PyTorch`, `Torchvision`, `OpenCV`, `Albumentations`
 * **Machine Learning & Time Series:** `XGBoost`, `Prophet`, `Scikit-Learn`
 * **Geospatial & Clustering:** `HDBSCAN`, `PyKalman`, `Folium`
-* **Explainable AI (XAI):** `Grad-CAM` (`pytorch_grad_cam`), `SHAP`
+* **Explainable AI (XAI) & Stats:** `Grad-CAM` (`pytorch_grad_cam`), `SHAP`, `Statsmodels`
 * **Data Engineering & Viz:** `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`
 
 ---
 
 ## 📂 Professional Repository Structure
-This project is engineered for reproducibility. All scripts utilize dynamic `os` pathing, meaning the codebase can be cloned and executed on any OS without hardcoded path errors. Outputs are routed automatically to their respective `graphs/` and `results/` directories.
+This project is engineered for reproducibility. All scripts utilize dynamic `os` pathing. Analytical tables (`.csv`) and graphical proofs (`.png`) route automatically to their designated directories.
 
 ```text
 wildlife_project/
@@ -77,23 +80,35 @@ wildlife_project/
 │
 ├── bird_species/
 │   ├── dataset/ (train, valid, test)
-│   ├── graphs/ (Grad-CAM heatmaps, Training Curves, Distributions)
-│   ├── results/ (computer_vision_metrics.txt)
-│   ├── 01_balance_image_dataset.py
-│   ├── 02_train_vision_model.py
-│   ├── 02b_cloud_training_notebook.ipynb
-│   └── 03_evaluate_vision_model.py
+│   ├── graphs/ (Grad-CAM, 5-Fold Validation, Ablation Distributions)
+│   ├── results/ (Master Tables, Morphological Twins, Misclassification Analysis)
+│   ├── 1_balance_image_dataset.py
+│   ├── 2_train_vision_model.py
+│   ├── 3_evaluate_vision_model.py
+│   ├── 4_vision_xai_gradcam.py
+│   ├── 5_vision_statistical_test.py
+│   ├── 6_vision_xai_ablation.py
+│   ├── 7_vision_extra_tables.py
+│   ├── 8_vision_5fold_validation.py
+│   ├── 9_vision_success_failure_xai.py
+│   ├── 12_vision_master_analytics.py
+│   ├── resnet50_baseline_imbalanced.pth
+│   └── resnet50_bird_classifier.pth
 │
 └── migration/
     ├── dataset/ (Raw Excel, Cleaned CSV)
-    ├── graphs/ (Kalman Paths, HDBSCAN Clusters, XGBoost Forecasts)
-    ├── results/ (research_metrics.txt)
-    ├── 01_preprocess_migration_data.py
-    ├── 02_exploratory_data_analysis.py
-    ├── 03_baseline_temporal_forecast.py
-    ├── 04_optimized_temporal_forecast.py
-    ├── 05_geospatial_stopover_tracking.py
-    └── 06_generate_research_metrics.py
+    ├── graphs/ (Kalman Paths, Confidence Intervals, SHAP Plots)
+    ├── results/ (Feature Engineering Lexicon, Data Pipeline Audits)
+    ├── 1_preprocess_migration_data.py
+    ├── 2_exploratory_data_analysis.py
+    ├── 3_baseline_temporal_forecast.py
+    ├── 4_optimized_temporal_forecast.py
+    ├── 5_geospatial_stopover_tracking.py
+    ├── 6_generate_research_metrics.py
+    ├── 9_migration_tables.py
+    ├── 10_migration_extra_tables.py
+    ├── 11_migration_confidence_interval.py
+    └── 12_migration_shap_analysis.py
 ```
 
 ---
