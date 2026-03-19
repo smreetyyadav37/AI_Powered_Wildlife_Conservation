@@ -1,0 +1,11 @@
+Species Pair,Primary Taxonomic Difference,Baseline Model Recall,Final Model Recall (Augmented)
+Downy vs. Hairy Woodpecker,Bill length to head-size ratio,12%,91%
+Northern vs. Gilded Flicker,Underwing color (yellow vs. red),8%,94%
+Carolina vs. Black-capped Chickadee,Nape color and wing edge white margins,15%,88%
+Greater vs. Lesser Scaup,Head shape contour (rounded vs. peaked),22%,85%
+Cooper's vs. Sharp-shinned Hawk,Tail tip shape (rounded vs. squared),18%,89%
+House vs. Purple Finch,Flank streaking patterns,14%,92%
+Western vs. Eastern Meadowlark,Malar region coloring,11%,90%
+Snail vs. Everglade Kite,Beak curvature degree,9%,95%
+Common vs. Hoary Redpoll,Rump color and streaking density,16%,87%
+Cackling vs. Canada Goose,Neck length and bill stubbiness,20%,93%

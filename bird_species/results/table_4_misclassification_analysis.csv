@@ -1,0 +1,6 @@
+True Species,Predicted Species,Grad-CAM Focal Point,Biological Cause for Confusion
+Gilded Flicker,Northern Flicker,Crest and wing pattern,"Virtually identical phenotypic traits; differ primarily in underwing hue, which may be obscured by lighting."
+Northern Cardinal,Pyrrhuloxia,Beak and crest shape,Shared crest morphology and robust seed-cracking beak shape; color variance lost in poor lighting.
+American Crow,Common Raven,Overall body mass and beak,Extreme scale ambiguity in 2D imagery; distinguishing requires relative size reference usually missing in photos.
+Mourning Dove,Eurasian Collared-Dove,Neck ring area,Overlapping habitat and highly similar plumage contouring; minor neck banding is often occluded.
+House Sparrow,Eurasian Tree Sparrow,Eye stripe and bib,Congeneric species with nearly identical cranial patterning and sexual dimorphism.

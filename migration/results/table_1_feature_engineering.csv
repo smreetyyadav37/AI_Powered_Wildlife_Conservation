@@ -1,0 +1,6 @@
+Feature Name,Datatype,Mathematical Operation,Ecological Rationale
+Month,Integer,Datetime Extraction,Captures macro-seasonality and broad migratory windows.
+WeekOfYear,Integer,ISO Calendar Extraction,Captures micro-seasonality and precise arrival timing.
+Lag_1_Week,Integer,t - 1 Shift,Models immediate arrival trends and flock momentum.
+Lag_2_Week,Integer,t - 2 Shift,Captures multi-week transit delays across the subcontinent.
+Rolling_Mean_4W,Float,4-Period Moving Average,Smooths out variance and noise inherent in crowdsourced citizen-science data.

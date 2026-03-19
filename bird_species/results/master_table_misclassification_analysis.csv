@@ -1,0 +1,6 @@
+True Class,Predicted Class,Baseline Grad-CAM Focus,Final Grad-CAM Focus,Ecological Reason for Failure
+Gilded Flicker,Northern Flicker,Background foliage,Malar stripe and underwing,"Virtually identical phenotypic traits; differ primarily in underwing hue, which is often occluded by resting wing posture."
+Northern Cardinal,Pyrrhuloxia,Entire body mass,Beak shape and crest,Shared crest morphology and robust seed-cracking beak shape; color variance is frequently lost in shadowed lighting.
+American Crow,Common Raven,Tree branch,Cranial profile,Extreme scale ambiguity in 2D imagery; distinguishing between Crow and Raven requires a relative size reference usually missing in photos.
+Mourning Dove,Eurasian Collared-Dove,Empty sky,Neck ring area,Overlapping habitat and highly similar plumage contouring; minor diagnostic neck banding is easily obscured by camera angle.
+House Sparrow,Eurasian Tree Sparrow,Irrelevant wooden feeder,Eye stripe and bib,Congeneric species with nearly identical cranial patterning; sexual dimorphism in one species closely mimics the other.

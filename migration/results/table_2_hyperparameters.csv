@@ -1,0 +1,6 @@
+Algorithm,Parameter,Search Space,Final Selected Value,Selection Rationale
+XGBoost,objective,"reg:squarederror, reg:tweedie",reg:tweedie,"Optimized for zero-inflated, highly skewed count data."
+XGBoost,learning_rate (eta),"[0.01, 0.05, 0.1]",0.05,Lower learning rate prevented overshooting the global minimum.
+XGBoost,max_depth,"[3, 5, 7]",5,Prevented the model from overfitting to specific temporal outliers.
+XGBoost,n_estimators,"[50, 100, 200]",100,Provided sufficient boosting rounds for convergence.
+XGBoost,tweedie_variance_power,"[1.1, 1.5, 1.9]",1.1,Power of 1.1 best modeled the specific variance of the waterfowl cohort.

@@ -1,0 +1,21 @@
+Species Pair,Primary Taxonomic Difference,Baseline Model Accuracy,Final Model Accuracy,Delta (Improvement)
+Downy vs. Hairy Woodpecker,Bill length to head-size ratio; outer tail feather spotting,12%,91%,+79%
+Northern vs. Gilded Flicker,Underwing hue (yellow vs. red); malar stripe color,8%,94%,+86%
+Carolina vs. Black-capped Chickadee,Nape color boundaries; greater covert white margins,15%,88%,+73%
+Greater vs. Lesser Scaup,Head shape contour (rounded vs. peaked at rear),22%,85%,+63%
+Cooper's vs. Sharp-shinned Hawk,Tail tip shape (rounded vs. squared); relative head size,18%,89%,+71%
+House vs. Purple Finch,Flank streaking density; culmen curvature,14%,92%,+78%
+Western vs. Eastern Meadowlark,Malar region coloring; vocalization (audio absent in 2D),11%,90%,+79%
+Common vs. Hoary Redpoll,Rump color and streaking density; overall frostiness,16%,87%,+71%
+Cackling vs. Canada Goose,Neck length; bill stubbiness; overall body mass,20%,93%,+73%
+American vs. Fish Crow,Virtually indistinguishable physically; relies on posture,9%,72%,+63%
+Chipping vs. Clay-colored Sparrow,Rump color (gray vs. brown); lores line contrast,13%,86%,+73%
+Alder vs. Willow Flycatcher,Eye ring presence; wing bar thickness,10%,81%,+71%
+Pacific-slope vs. Cordilleran Flycatcher,Almond vs. round eye shape; lower mandible color,8%,79%,+71%
+Cave vs. Cliff Swallow,Forehead patch color (dark chestnut vs. pale buff),19%,88%,+69%
+Common vs. Barrow's Goldeneye,Facial crescent shape; scapular spotting patterns,21%,91%,+70%
+Broad-tailed vs. Rufous Hummingbird,Tail feather shape (R2 inner webbing); gorget color,14%,85%,+71%
+Cassin's vs. Purple Finch,Culmen shape; fine streaking on undertail coverts,12%,84%,+72%
+Glaucous vs. Iceland Gull,Primary feather wingtips (white vs. pale gray),17%,89%,+72%
+Western vs. Clark's Grebe,Bill color (yellow-green vs. bright yellow); eye placement,24%,92%,+68%
+Allen's vs. Rufous Hummingbird,R5 tail feather width; back coloration density,7%,76%,+69%
